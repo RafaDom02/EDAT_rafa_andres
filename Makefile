@@ -4,7 +4,7 @@
 export PGDATABASE:=flight
 export PGUSER :=alumnodb
 export PGPASSWORD :=alumnodb
-export PGCLIENTENCODING:=LATIN9
+export PGCLIENTENCODING:=UTF8
 export PGHOST:=localhost
 
 DBNAME =$(PGDATABASE)
