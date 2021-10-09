@@ -3,7 +3,7 @@
 with bookref_to_ticket_no(book_ref, ticket_no) as 
 	(
 	select
-		  b.book_ref, t.ticket_no
+		 b.book_ref, t.ticket_no
 	from
 		bookings b , tickets t
 	where
@@ -29,7 +29,9 @@ with bookref_to_ticket_no(book_ref, ticket_no) as
 		select
 			  distinct bft.book_ref, tnd.flight_id, tnd.ticket_no
 		from 
-			bookref_to_ticket_no bft natural join ticket_no_to_flight_id tnd
+			bookref_to_ticket_no bft join ticket_no_to_flight_id tnd
+		on
+			bft.ticket_no = tnd.ticket_no
 		where
 			bft.ticket_no = tnd.ticket_no
 	)
