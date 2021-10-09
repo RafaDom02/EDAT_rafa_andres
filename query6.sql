@@ -1,3 +1,5 @@
+--ejercicio 6
+
 WITH flight_no_and_id(flight_no, actual_arrival, scheduled_arrival) as
 (
 	SELECT
