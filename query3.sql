@@ -1,7 +1,7 @@
 --EJERCICIO 3
 
 SELECT
-    DISTINCT a.airport_code, count(*)
+    DISTINCT a.airport_code, count(*) as total_passengers
 FROM
     airports_data a JOIN flights f ON a.airport_code=f.arrival_airport
     JOIN ticket_flights tf ON tf.flight_id=f.flight_id
