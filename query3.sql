@@ -1,14 +1,11 @@
 --EJERCICIO 3
 
 SELECT
-    DISTINCT a.airport_code, count(*) as total_passengers
+    a.airport_code, count(*) as total_passengers
 FROM
     airports_data a JOIN flights f ON a.airport_code=f.arrival_airport
-    JOIN ticket_flights tf ON tf.flight_id=f.flight_id
-    JOIN boarding_passes bp ON bp.ticket_no =tf.ticket_no
-where
-	f.status='Arrived'
+    join boarding_passes bp on bp.flight_id=f.flight_id 
 group by
 	a.airport_code
 order by
-	count asc;
+	total_passengers;
