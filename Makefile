@@ -57,4 +57,5 @@ query5:
 query6:
 	@echo query6: "Show the flights with the max delay" | tee query6.log
 	@cat query6.sql | $(PSQL) | tee -a query6.log
-
+clean:
+	rm *.log
