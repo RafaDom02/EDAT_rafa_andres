@@ -6,8 +6,6 @@ WITH flight_no_and_id(flight_no, actual_arrival, scheduled_arrival) as
 		f.flight_no, f.actual_arrival, f.scheduled_arrival
 	FROM
 		flights f
-	group by
-		f.flight_no, f.actual_arrival, f.scheduled_arrival
 ),
 flight_delays(flight_no, retraso) as
 (
@@ -33,8 +31,6 @@ flight_average_delay_max(flight_no, retraso_medio_max) as
 		fd.flight_no, fd.retraso_medio as retraso_medio_max
 	FROM
 		flight_average_delay fd
-	GROUP BY
-		fd.flight_no, fd.retraso_medio
 	ORDER BY
 		fd.retraso_medio desc limit 1
 ),
