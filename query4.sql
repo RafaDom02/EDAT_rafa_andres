@@ -38,7 +38,7 @@ with A_AVION_T(aircrafts_code, totalasientos) as
 			av.asientos_vacios desc limit 1
 	)
 	
-	select \
+	select
 		av.flight_id, av.asientos_vacios
 	from 
 		A_AVION_AV av join A_AVION_AV_MAS_VACIO avmv on av.asientos_vacios = avmv.asientos_vacios
