@@ -11,4 +11,4 @@ where
 group by
 	a.airport_code
 order by
-	count desc;
+	count asc;
