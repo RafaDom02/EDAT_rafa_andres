@@ -13,7 +13,7 @@ with A_AVION_T(aircrafts_code, totalasientos) as
 		select 
 			f.flight_id, f.aircraft_code, count(*) as ocupadosasientos
 		from
-			flights f join boarding_passes bp on f.flight_id=bp.flight_id
+			flights f join ticket_flights tf on f.flight_id=tf.flight_id
 		group by
 			f.flight_id, f.aircraft_code
 	),
