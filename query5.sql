@@ -8,8 +8,6 @@ with book_ref_with_tickets(book_ref, ticket_no, flight_id) as
 			tickets t, ticket_flights tf 
 		where
 			t.ticket_no = tf.ticket_no
-		group by 
-			t.ticket_no, tf.flight_id 
 	)
 
 select 
