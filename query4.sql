@@ -30,15 +30,16 @@ with A_AVION_T(aircrafts_code, totalasientos) as
 	),
 	A_AVION_AV_MAS_VACIO as
 	(
-		select *
+		select 
+			*
 		from
 			a_avion_av av
 		order by
 			av.asientos_vacios desc limit 1
 	)
 	
-	select av.flight_id, av.asientos_vacios
-	
+	select \
+		av.flight_id, av.asientos_vacios
 	from 
 		A_AVION_AV av join A_AVION_AV_MAS_VACIO avmv on av.asientos_vacios = avmv.asientos_vacios
 	order by av.asientos_vacios;
